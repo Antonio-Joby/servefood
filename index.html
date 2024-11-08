@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Wastage Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="roleSelection" class="form-container">
+        <h3>Select Role</h3>
+        <button onclick="showSenderLogin()">Sender Login</button>
+        <button onclick="showVolunteerLogin()">Volunteer Login</button>
+    </div>
+
+    <!-- Sender Login Form -->
+    <div id="senderLoginForm" class="form-container hidden">
+        <h3>Sender Login</h3>
+        <input type="text" id="senderLoginUsername" placeholder="Username" required />
+        <input type="password" id="senderLoginPassword" placeholder="Password" required />
+        <button onclick="login('sender')">Login</button>
+        <button onclick="showSenderRegisterForm()">Register</button>
+    </div>
+
+    <!-- Volunteer Login Form -->
+    <div id="volunteerLoginForm" class="form-container hidden">
+        <h3>Volunteer Login</h3>
+        <input type="text" id="volunteerLoginUsername" placeholder="Username" required />
+        <input type="password" id="volunteerLoginPassword" placeholder="Password" required />
+        <button onclick="login('volunteer')">Login</button>
+        <button onclick="showVolunteerRegisterForm()">Register</button>
+    </div>
+
+    <!-- Sender Register Form -->
+    <div id="senderRegisterForm" class="form-container hidden">
+        <h3>Sender Registration</h3>
+        <input type="text" id="senderRegisterName" placeholder="Full Name" required />
+        <input type="text" id="senderRegisterPhone" placeholder="Phone Number" required />
+        <input type="text" id="senderRegisterUsername" placeholder="Username" required />
+        <input type="password" id="senderRegisterPassword" placeholder="Password" required />
+        <button onclick="register('sender')">Register</button>
+        <button onclick="showSenderLogin()">Back to Login</button>
+    </div>
+
+    <!-- Volunteer Register Form -->
+    <div id="volunteerRegisterForm" class="form-container hidden">
+        <h3>Volunteer Registration</h3>
+        <input type="text" id="volunteerRegisterName" placeholder="Full Name" required />
+        <input type="text" id="volunteerRegisterPhone" placeholder="Phone Number" required />
+        <input type="text" id="volunteerRegisterUsername" placeholder="Username" required />
+        <input type="password" id="volunteerRegisterPassword" placeholder="Password" required />
+        <button onclick="register('volunteer')">Register</button>
+        <button onclick="showVolunteerLogin()">Back to Login</button>
+    </div>
+
+    <!-- Sender Section -->
+    <div id="senderSection" class="section-container hidden">
+        <h3>Welcome, <span id="senderName"></span></h3>
+        <button onclick="showSendFoodForm()">Send Food</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Volunteer Section -->
+    <div id="volunteerSection" class="section-container hidden">
+        <h3>Welcome, <span id="volunteerName"></span></h3>
+        <button onclick="showReceiveFoodSection()">Receive Food</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Send Food Form -->
+    <div id="sendFoodForm" class="form-container hidden">
+        <h3>Send Food</h3>
+        <input type="text" id="sendHouseNo" placeholder="House No" required />
+        <input type="text" id="sendArea" placeholder="Area" required />
+        <input type="number" id="sendPlates" placeholder="Plates of food" required />
+        <input type="text" id="sendName" placeholder="Your Name" required />
+        <input type="text" id="sendPhone" placeholder="Your Phone" required />
+        <button onclick="sendFoodSubmit()">Submit</button>
+        <button onclick="backToSenderSection()">Back</button>
+    </div>
+
+    <!-- Receive Food Section -->
+    <div id="receiveFoodSection" class="section-container hidden">
+        <h3>Available Food Requests</h3>
+        <div id="availableRequests"></div>
+        <div id="pendingJobs"></div>
+        <button onclick="backToVolunteerSection()">Back</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
